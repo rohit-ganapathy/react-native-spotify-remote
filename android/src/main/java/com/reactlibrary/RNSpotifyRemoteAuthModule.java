@@ -94,11 +94,11 @@ public class RNSpotifyRemoteAuthModule extends ReactContextBaseJavaModule implem
                     if (authPromise != null) {
                         String token = response.getAccessToken();
                         mAuthResponse = response;
-                        authPromise.resolve(Convert.toMap(response, "TOKEN"));
+                        authPromise.resolve(Convert.toMap(response, 'TOKEN'));
                     }
                     break;
 
-                case CODE:
+                    ase CODE:
                     if (authPromise != null) {
                         String token = response.getCode();
                         mAuthResponse = response;
