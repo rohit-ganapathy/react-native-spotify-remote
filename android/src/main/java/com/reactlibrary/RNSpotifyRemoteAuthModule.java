@@ -58,7 +58,7 @@ public class RNSpotifyRemoteAuthModule extends ReactContextBaseJavaModule implem
 
         AuthorizationRequest.Builder builder;
         switch(responseType){
-            case TOKEN:
+            case "TOKEN":
             builder = new AuthorizationRequest.Builder(
                     clientId,
                     AuthorizationResponse.Type.TOKEN,
@@ -66,13 +66,20 @@ public class RNSpotifyRemoteAuthModule extends ReactContextBaseJavaModule implem
             );
             break;
 
-            case CODE:
+            case "CODE":
             builder = new AuthorizationRequest.Builder(
                     clientId,
                     AuthorizationResponse.Type.CODE,
                     redirectUri
             );
             break;
+
+
+            default:
+            builder = new AuthorizationRequest.Builder(
+                    clientId,
+                    AuthorizationResponse.Type.TOKEN,
+                    redirectUri);
         }
         builder.setScopes(scopes);
         AuthorizationRequest request = builder.build();
