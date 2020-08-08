@@ -98,7 +98,7 @@ public class RNSpotifyRemoteAuthModule extends ReactContextBaseJavaModule implem
                     }
                     break;
 
-                    ase CODE:
+                    case CODE:
                     if (authPromise != null) {
                         String token = response.getCode();
                         mAuthResponse = response;
